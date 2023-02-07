@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="Editor.md,editor,Markdown Editor,Markdown" />
+    <meta name="description" content="Skills Network Author IDE" />
+    <title>Skills Network Editor</title>
+    <link rel="stylesheet" href="editormd/examples/css/style.css?version=2.0.10" />
+    <link rel="stylesheet" href="editormd/css/editormd.css?version=2.0.10" />
+    <link rel="stylesheet" href="public/css/custom.css?version=2.0.10" />
+    <link rel="shortcut icon" href="public/images/SN_favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="public/js/comms.js?version=2.0.10"></script>
+    <script src="//unpkg.com/alpinejs"></script>
+</head>
+
+<body>
+    <div id="layout">
+    <div id="test-editormd">
+        <textarea style="display:none;"># Agile Planning
+
+**Estimated time needed:** 60 minutes
+
+Welcome to the hands-on Agile Planning lab. In this lab, you will build a sprint plan, or Sprint 0, in preparation for the first sprint for your customer accounts microservice development project. The plan is to create an account service to read, update, and delete accounts. The accounts service database will contain basic information about customer names and addresses.
+
+&gt; Note: For this lab, you will be working in GitHub and Zenhub. You will not be using the lab environment.
+
+## Objectives
+
+In this lab, you will:
+
+* Create a GitHub repository
+* Add a GitHub repository to a Zenhub kanban board
+* Develop a user story template
+* Add user stories to a kanban board
+* Sort user stories to prepare for backlog refinement
+* Refine a product backlog to make it sprint ready
+* Build a sprint plan
+
+### Note on Screenshots
+
+Throughout this lab, you will be prompted to take screenshots and save them on your device. You will need these screenshots either to answer graded quiz questions or to upload and submit for peer review at the end of this course. Your screenshot must have either the .jpg or .png extension.
+
+To take screenshots, you can use various free screen-capture tools or, depending on your operating system, the following shortcut keys:
+
+- **Mac:** You can use &#x60;Shift + Command + 3&#x60; (&amp;#8679; + &amp;#8984; + 3) on your keyboard to capture your entire screen, or &#x60;Shift + Command + 4&#x60; (&amp;#8679; + &amp;#8984; + 4) to capture a window or area. They will be saved as a file on your desktop.
+
+- **Windows:** You can capture your active window by pressing &#x60;Alt + Print Screen&#x60; on your keyboard. This command copies an image of your active window to the clipboard. Next, open an image editor, paste the image from your clipboard to the image editor, and save the image.
+
+## Project Overview
+
+You have been asked by the customer account manager at your company to develop an account microservice to keep track of the customers on your e-commerce website. Since it is a microservice, it is expected to have a well-formed REST API that other microservices can call. This service initially needs to create, read, update, delete, and list customers.
+
+You have also been told that someone else has started on this task. They have already developed the database model and a Python Flask-based REST API with an endpoint to create a customer account. You just need to plan to add the REST APIs to read, update, delete, and list accounts. Since you will be working in an online lab environment, you will need to plan your work to get that environment ready for development.
+
+---
+
+## Exercise 1: Create a GitHub Repository
+
+In this exercise, you will create a GitHub repository using a starter template that will be provided for you. You will need your own GitHub repository to be able to push modifications that you make back to GitHub and save them.
+
+&gt; Note: It is important to understand that the lab environment that you will be developing is ephemeral. It is short-lived and may be deleted at any time. For this reason, all of your work must be saved in GitHub so that it can be easily restored.
+
+You will also connect your GitHub repository to your Zenhub account and, optionally, install the Zenhub plugin in your browser.
+
+### Steps to Complete
+
+1. Create a new GitHub repository for your project, called &#x60;devops-capstone-project&#x60;, from the template provided by the URL below:
+
+    * Click this URL to open the starter code project: [https://github.com/ibm-developer-skills-network/aolwx-devops-capstone-template](https://github.com/ibm-developer-skills-network/aolwx-devops-capstone-template)
+
+    * Use the green &#x60;[Use this template]&#x60; button to clone this repository to your own private GitHub account. (Do not use Fork; use the Template button.)
+
+    * Give your repository the name &#x60;devops-capstone-project&#x60;. This is the name that graders will be looking for to grade your work.
+
+    * Ensure you select the **Public** option for your repository and then create it.
+
+1. Connect your Zenhub account with your GitHub account if it is not already connected.
+
+1. In Zenhub, create a kanban board workspace for your new repository. Call the workspace &#x60;capstone-project&#x60; and make sure that your repository is added to your workspace.
+
+1. (Optional) Install the [Zenhub browser extension](https://www.zenhub.com/extension?utm_medium&#x3D;Exinfluencer&amp;utm_source&#x3D;Exinfluencer&amp;utm_content&#x3D;000026UJ&amp;utm_term&#x3D;10006555&amp;utm_id&#x3D;NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMCD0285ENSkillsNetwork734-2022-01-01) to the Chrome or Firefox browser. This extension will add a Zenhub tab so that you do not have to go to zenhub.com to view your kanban board while you are using GitHub.
+
+### Evidence
+
+1. Take a screenshot of the repository and save the screenshot as &#x60;planning-repository-done.jpg&#x60; (or &#x60;planning-repository-done.png&#x60;).
+
+1. Copy and save the URL for the repository that you just created.
+
+---
+
+## Exercise 2: Create a User Story Template
+
+In this exercise, you will create a user story template in GitHub that will help you write well-formatted user stories for your ZenHub kanban board.
+
+### Steps to Complete
+
+1. Create an issue template in GitHub for your project\&#x27;s GitHub repository. Ensure the template includes the components listed below. You may want to copy, paste, then edit this text because it also contains the correct markdown syntax you will need for the template.
+
+&#x60;&#x60;&#x60;text
+**As a** [role]  
+**I need** [function]  
+**So that** [benefit]  
+      
+### Details and Assumptions
+    * [document what you know]      
+
+### Acceptance Criteria     
+	gherkin 
+    Given [some context]
+    When [certain action is taken]
+    Then [the outcome of action is observed]
+&#x60;&#x60;&#x60;
+
+2. Ensure that you have a new folder in your repository called &#x60;.github/ISSUE_TEMPLATES&#x60;. This folder will contain your new user story template.
+
+### Evidence
+
+1. Take a screenshot of the repository template and save the screenshot as &#x60;planning-storytemplate-done.jpg&#x60; (or &#x60;planning-storytemplate-done.png&#x60;).
+
+---
+
+## Exercise 3: Assemble Your Product Backlog
+
+In this exercise, you will create user stories based on the customer accounts microservice for the e-commerce Capstone Project. The accounts service will have basic customer information like names and addresses.
+
+1. Create seven user stories in your Zenhub kanban board, one for each of the following steps of your project:
+
+   * Set up the development environment
+   * Read an account from the service
+   * Update an account in the service
+   * Delete an account from the service
+   * List all accounts in the service
+   * Containerize your microservice using Docker
+   * Deploy your Docker image to Kubernetes
+
+1. Ensure that all your stories are listed in the **New Issues** pipeline.
+
+1. Take a screenshot of your kanban board and save the screenshot as &#x60;planning-userstories-done.jpg&#x60; (or &#x60;planning-userstories-done.png&#x60;).
+
+---
+
+## Exercise 4: Triage New Issues
+
+In this exercise, you will begin to conduct **Backlog Refinement** by inspecting the issues in the &#x60;New Issues&#x60; pipeline and moving them to the &#x60;Product Backlog&#x60; or &#x60;Icebox&#x60; depending on when you plan to work on them. Containerizing with Docker and deploying to Kubernetes is something you will do a few sprints from now, so it is not immediately important.
+
+### Steps to Complete
+
+1. Determine which user stories you will work on immediately and move them from the &#x60;New Issues&#x60; pipeline to the &#x60;Product Backlog&#x60; pipeline.
+
+1. Move the remaining stories from &#x60;New Issues&#x60; into the &#x60;Ice box&#x60; as you will work on them later.
+
+&lt;details&gt;
+	&lt;summary&gt;Click here for a hint.&lt;/summary&gt;
+Five stories will be implemented now, and two will be implemented later.
+&lt;/details&gt;
+
+### Evidence
+
+1. Take a screenshot of your kanban board and save the screenshot as &#x60;planning-productbacklog-done.jpg&#x60; (or &#x60;planning-productbacklog-done.png&#x60;).
+
+---
+
+## Exercise 5: Refine Your Product Backlog
+
+In this exercise, you will follow the steps of conducting a backlog refinement meeting. You will be the product owner, getting the product backlog ready for your next sprint planning meeting. The goal of this preparation is to make all your stories sprint ready.
+
+### Steps to Complete
+
+1. Make sure that all the stories in the &#x60;Product Backlog&#x60; have sufficient details to be considered &quot;sprint ready.&quot; Pay special attention to the **Acceptance Criteria** to be sure that you have defined the definition of &quot;done.&quot;
+
+1. In GitHub, create a label called &#x60;technical debt&#x60; with a &#x60;yellow&#x60; color code and add it to your repository.
+
+1. Assign labels to your stories. Remember that anything that brings value to the customer is an &#x60;enhancement&#x60;, and &#x60;technical debt&#x60; can be things that developers need but provide no visible customer value.
+
+1. Rank the stories in the &#x60;Product Backlog&#x60; from highest to lowest priority by dragging them higher or lower in the pipeline column, respectively. Think about the order in which you should implement them.
+
+&lt;details&gt;
+	&lt;summary&gt;Click here for a hint.&lt;/summary&gt;
+At least one story should be labeled &quot;technical debt.&quot;
+&lt;/details&gt;
+
+### Evidence
+
+1. Take a screenshot of your kanban board and save the screenshot as &#x60;planning-labels-done.jpg&#x60; (or &#x60;planning-labels-done.png&#x60;).
+
+---
+
+## Exercise 6: Build Your First Sprint from Your Product Backlog
+
+In this exercise, you will populate your first Sprint Backlog from your Product Backlog. Typically, you create a sprint plan with your entire team during the sprint planning meeting. But since you are completing this project by yourself, you will have to simulate that meeting.
+
+### Steps to Complete
+
+1. Set up sprints in Zenhub and make the sprints one week in duration.
+
+1. Rename the three sprints that Zenhub creates as: **Sprint 1**, **Sprint 2**, and **Sprint 3**, respectively. This will make it easier for you to track and others to grade.
+
+1. Open the first story from the top of the &#x60;Product Backlog&#x60; and assign estimated story points to it. For now, use the scale **3, 5, 8, 13 &#x3D; S, M, L, XL**.
+
+1. Assign the current story to **Sprint 1**.
+
+1. Close the current story and move it from the &#x60;Product Backlog&#x60; to the &#x60;Sprint Backlog&#x60;, being careful to preserve its ranked order. For example, the story at the top of the &#x60;Product Backlog&#x60; would remain the top story in the &#x60;Sprint Backlog&#x60;.
+
+1. Repeat steps 3 through 5 for the remaining four stories in the &#x60;Product Backlog&#x60;, preserving their ranked order.
+
+
+&lt;details&gt;
+	&lt;summary&gt;Click here for a checklist.&lt;/summary&gt;
+Ensure each of these stories is &quot;sprint ready&quot; by checking the following:
+
+- Each story has a label
+- Each story has an estimate
+- Each story is assigned to Sprint 1
+&lt;/details&gt;
+
+### Evidence
+
+1. Take a screenshot of your kanban board and save the screenshot as &#x60;planning-kanban-done.jpg&#x60; (or &#x60;planning-kanban-done.png&#x60;).
+
+## Conclusion
+
+Congratulations! You have created your first sprint plan for this Capstone project. You are now ready to start implementing your account microservice.
+
+## Next Steps
+
+Your next step is to start Module 2: Develop a RESTful Service Using .
+
+## Author(s)
+
+Tapas Mandal  
+[John J. Rofrano](https://www.linkedin.com/in/johnrofrano?utm_medium&#x3D;Exinfluencer&amp;utm_source&#x3D;Exinfluencer&amp;utm_content&#x3D;000026UJ&amp;utm_term&#x3D;10006555&amp;utm_id&#x3D;NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMCD0285ENSkillsNetwork734-2022-01-01)
+
+### Other Contributor(s)
+
+## Change Log
+
+| Date | Version | Changed by | Change Description |
+|------|--------|--------|---------|
+| 2022-10-03 | 0.1 | Tapas Mandal | Initial version created |
+| 2022-10-05 | 0.2 | John Rofrano | Added more details and reformatted |
+| 2022-10-11 | 0.3 | Amy Norton | ID Review |
+| 2022-10-12 | 0.4 | Beth Larsen | QA review |
+| 2022-10-14 | 0.5 | John Rofrano | Updated screenshot image names |
+</textarea>
+    </div>
+</div>
+
+<script src="editormd/examples/js/jquery.min.js"></script>
+<script src="editormd/editormd.js?version=2.0.10"></script>
+
+<script src="editormd/languages/en.js"></script>
+
+<script src="public/js/common.js?version=2.0.10"></script>
+<script src="public/js/render.js?version=2.0.10"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        let token = findGetParameter("token");
+
+        let LABS_BASE_URL = 'https://labs.cognitiveclass.ai';
+        let asset_library_prefix_url = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-CD0285EN-SkillsNetwork';
+        let tool_type = "instructional-lab";
+        let projectId = "";
+        let filename = `labs/agile_planning.md`;
+        try {
+            let projectIdStored = false
+            let project = JSON.parse(localStorage.getItem("sn-project"))
+            if (project != null) {
+                if (projectId in project) {
+                    projectIdStored = true
+                    if (!(filename in project[projectId])) {
+                        project[projectId][filename] = {}
+                    }
+                }
+            }
+            if (!projectIdStored) {
+                project = {}
+                project[projectId] = {}
+                project[projectId][filename] = {}
+            }
+            window.localStorage.setItem("sn-project", JSON.stringify(project))
+        }
+        catch (e) {
+            console.log(e)
+        }
+
+        var authorEditor = editormd("test-editormd", "2.0.10", {
+
+            tool_type,
+            projectId,
+            filename,
+
+            width: "100%",
+            //height: "100%",
+            autoHeight: true,
+
+            // mode: 'markdown',
+
+            theme: "dark",
+            previewTheme: tool_type == "instructional-lab" ? "light" : "dark",
+            editorTheme: "pastel-on-dark",
+
+            readOnly: true,
+
+            pluginPath: 'plugins/',
+
+
+            syncScrolling: false,
+
+            htmlDecode: 'img',
+
+            path: 'editormd/lib/',
+            watch: false,
+
+            // markdown,
+            toolbar: false,
+
+            atLink: false,
+            toc: true,
+            tocm: true,
+            tocDropdown: false,
+            tocTitle: "Table of Contents For your lab!",
+
+            tex: true,
+            flowChart: true,
+            sequenceDiagram: true,
+            codeFold: true, // Doesn't do anything?
+            taskList: true,
+            emoji: true,
+
+            saveMarkdownToTextarea: true,
+
+            onresize: function () {
+                $("html,body").css("overflow", "hidden");
+
+                this.preview.css({
+                    width: $(window).width(),
+                    height: $(window).height()
+                })
+
+                adjustProgressBarWidth()
+            },
+            fixCodeBlocks: function () {
+                adjustCodeBlocks(this);
+            },
+            onload: function () {
+                $("[type=\"file\"]").bind("change", function () {
+                    alert($(this).val());
+                    authorEditor.cm.replaceSelection($(this).val());
+                    console.log($(this).val(), authorEditor);
+                });
+
+                this.fullscreen();
+                this.previewing();
+
+                setPreviewWatchToolbar(this);
+
+                if (tool_type != "instructional-lab") {
+                    fixCustomPlugins(this);
+                }
+                setAssetLibraryPrefixUrl(asset_library_prefix_url);
+                //comms with UI
+                setParentUrl(LABS_BASE_URL);
+                establishCommsWithUI(this);
+                //let the UI know that the author-ide has loaded
+                requestToUI({ type: "frame_loaded" });
+            }
+        });
+    });
+</script>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+
+</html>
